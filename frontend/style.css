@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #dcedc8, #f1f8e9);
+    color: #183b2a;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 65px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    color: #176b45;
+}
+
+.tagline {
+    color: #668775;
+    font-size: 14px;
+}
+
+/* MAIN SECTION */
+
+main {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.section-label {
+    color: #43845e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* QUOTE CARD */
+
+.quote-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 45px 40px;
+    margin-top: 20px;
+    text-align: center;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 45px rgba(39, 94, 62, 0.09);
+    border: 1px solid #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+}
+
+.quote-icon {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    line-height: 1;
+    color: #75a982;
+}
+
+#quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #244c35;
+    margin: 15px 0 25px;
+}
+
+#author {
+    color: #5a956b;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+/* BUTTON */
+
+#newQuoteBtn {
+    background: linear-gradient(135deg, #176b45, #35965e);
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(23, 107, 69, 0.2);
+    transition: all 0.3s ease;
+}
+
+#newQuoteBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(23, 107, 69, 0.3);
+}
+
+#newQuoteBtn span {
+    margin-right: 8px;
+}
+
+/* FOOTER TEXT */
+
+.quote-footer {
+    margin-top: 22px;
+    text-align: center;
+    color: #779783;
+    font-size: 12px;
+}
+
+/* HISTORY */
+
+.history-section {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid white;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(39, 94, 62, 0.06);
+}
+
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.history-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-top: 8px;
+    color: #244c35;
+}
+
+.history-icon {
+    font-size: 28px;
+    color: #4c9564;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #f1f8f0;
+    border-left: 4px solid #65a875;
+    padding: 17px;
+    border-radius: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+.history-item p {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #315d40;
+}
+
+.history-item span {
+    display: block;
+    font-size: 12px;
+    color: #6c9978;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.empty-message {
+    color: #83a28c;
+    font-size: 13px;
+    text-align: center;
+    padding: 35px 10px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: #779783;
+    font-size: 12px;
+    margin-top: 65px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+
+    .quote-card {
+        padding: 35px 20px;
+    }
+
+    #quote {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .quote-card {
+        min-height: 330px;
+    }
+
+    #quote {
+        font-size: 21px;
+    }
+}
